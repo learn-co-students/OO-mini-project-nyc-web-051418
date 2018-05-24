@@ -1,3 +1,4 @@
+require_relative 'Ingredient'
 class RecipeIngredient
   attr_accessor :ingredient, :recipe, :id
 

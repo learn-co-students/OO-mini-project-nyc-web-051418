@@ -1,4 +1,4 @@
-
+require_relative 'RecipeIngredient'
 require_relative 'RecipeCard'
 class Recipe
   attr_accessor :recipe_name
@@ -14,11 +14,12 @@ class Recipe
     highest_count = 0
     highest_recipe = nil
     Recipe.all.each do |recipe|
-      count = RecipeCard.select do |recipe_card|
+      count = RecipeCard.all.select do |recipe_card|
+        recipe_card.recipe == recipe
       end
       if count.length > highest_count
         highest_count = count.length
-        highest_recipe = self
+        highest_recipe = recipe
       end
     end
     highest_recipe
@@ -34,7 +35,7 @@ class Recipe
       recipe_card.recipe == self
     end
     card_list.map do |recipe_card|
-      recipe_card.user
+      recipe_card.recipe_user_id
     end
   end
 
@@ -59,8 +60,10 @@ class Recipe
     end
   end
 
-  def add_ingredients
+  def add_ingredients(ingredient_list)
     # should take an array of ingredient instances as an argument, and associate each of those ingredients with this recipe
-
+    ingredient_list.each do |look|
+      RecipeIngredient.new(look, self)
+    end
   end
 end

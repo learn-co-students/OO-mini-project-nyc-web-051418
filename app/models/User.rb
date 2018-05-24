@@ -24,6 +24,9 @@ class User
   end
 
   def allergens
+    Allergen.all.select do |allergen|
+      allergen.user == self
+    end
   end
 
   def top_three_recipes
