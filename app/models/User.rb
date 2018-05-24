@@ -51,6 +51,10 @@ class User
   end
 
   def most_recent_recipe
-
+    recipe_cards = RecipeCard.all.select do |recipe_card|
+      recipe_card.recipe_user_id == self
   end
+
+  recipe_cards[-1]
+  end 
 end

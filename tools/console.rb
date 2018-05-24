@@ -13,6 +13,7 @@ flour = Ingredient.new("flour")
 
 milk_allergy = Allergen.new(john, milk)
 peanut_allergy = Allergen.new(richard, peanut_butter)
+john_peanut_allergy = Allergen.new(john, peanut_butter)
 
 RecipeCard.new(dinner, richard, 3, "1999")
 RecipeCard.new(dinner, john, 2, "1999")
