@@ -44,25 +44,26 @@ class Recipe
   end
 
   def self.most_popular
-    #get a list of all the recipe card instances (recipe to user)
     rc_list = RecipeCard.all.map do |rc|
       rc.recipe
     end
-    #create a hash to count each time a recipe has a user
+
     count_hash = {}
-    #iterate over each recipe instance
+
     rc_list.each do |x|
-      #iterate over each recipe
       Recipe.all.each do |y|
-        if count_hash.key?(y)
-          count_hash[x] += 1
-        else
-          count_hash[x] = 1
-        end
+          if count_hash.key?(x)
+            if x == y
+            count_hash[x] += 1
+            end
+          else
+            if x == y
+            count_hash[x] = 1
+            end
+          end
       end
-      value = count_hash.max_by{|k,v| v}[0]
-    # binding.pry
-  end
+    end
+    value = count_hash.max_by{|k,v| v}[0]
 end
 
 end
