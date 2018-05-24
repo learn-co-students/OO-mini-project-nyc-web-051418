@@ -18,29 +18,24 @@ paella = Recipe.new("Paella")
 pasta = Ingredient.new("Pasta")
 rice = Ingredient.new("Rice")
 buffalo = Ingredient.new("Buffalo Sauce")
-wings = Ingredient.new("Chicken Wings")
+chicken = Ingredient.new("Chicken Wings")
 fish = Ingredient.new("Fish")
 cheese = Ingredient.new("Cheese")
 dough = Ingredient.new("Dough")
 
-# RecipeIngredient.new("Macaroni and Cheese", "Pasta")
-# RecipeIngredient.new("Macaroni and Cheese", "Cheese")
-# RecipeIngredient.new("Pizza", "Dough")
-# RecipeIngredient.new("Pizza", "Cheese")
-# RecipeIngredient.new("Wings", "Chicken Wings")
-# RecipeIngredient.new("Wings", "Buffalo Sauce")
-# RecipeIngredient.new("Paella", "Rice")
-# RecipeIngredient.new("Paella", "Fish")
-# RecipeIngredient.new("Paella", "Chicken Wings")
-#
-# RecipeCard.new("Alberto", "Paella")
-# RecipeCard.new("Alberto", "Pizza")
-# RecipeCard.new("Alberto", "Macaroni and Cheese")
-# RecipeCard.new("Max", "Chicken Wings")
-# RecipeCard.new("Max", "Paella")
-# RecipeCard.new("Max", "Macaroni and Cheese")
-#
-# Allergen.new("Alberto", "Buffalo Sauce")
-# Allergen.new("Max", "Cheese")
+alberto.add_recipe_card(paella, 1, 10)
+alberto.add_recipe_card(pizza, 2, 6)
+alberto.add_recipe_card(wings, 3, 8)
 
-Pry.start
+max.add_recipe_card(mac_cheese, 1, 10)
+max.add_recipe_card(paella, 2, 6)
+max.add_recipe_card(wings, 3, 8)
+
+alberto.declare_allergen(fish)
+max.declare_allergen(cheese)
+
+alberto.top_three_recipes
+
+binding.pry
+true
+# Pry.start
