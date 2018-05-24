@@ -29,7 +29,7 @@ class Recipe
 
 
     def users
-      self.recipe_card.user
+      .recipe_card.user
       #pizza.user => "matt"
     end
 
