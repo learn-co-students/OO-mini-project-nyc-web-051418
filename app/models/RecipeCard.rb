@@ -6,7 +6,7 @@ class RecipeCard
 
   ALL = []
 
-  def initialize(recipe_card_title, recipe)
+  def initialize(recipe_card_title, recipe, date, rating, user)
     @recipe_card_title = recipe_card_title
     @date = date
     @rating = rating
@@ -37,7 +37,3 @@ class RecipeCard
 
 
 end
-
-# pizza = RecipeCard.new(recipe_card_title: "pizza", recipe: "pizza")
-# pasta = RecipeCard.new(recipe_card_title: "pasta", recipe: "pasta")
-# taco = RecipeCard.new(recipe_card_title: "taco", recipe: "taco")

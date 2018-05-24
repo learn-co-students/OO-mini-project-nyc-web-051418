@@ -2,13 +2,13 @@ require 'pry'
 
 class Recipe
 
-    attr_accessor :recipe_name, :ingredients, :recipe_card
+    attr_accessor :recipe_name, :ingredients, :recipe_card, :recipe_card_title
 
     ALL = []
 
-    def initialize(recipe_name:,ingredients:, recipe_card_title:)
+    def initialize(recipe_name, recipe_card_title)
       @recipe_name = recipe_name
-      @ingredients = ingredients
+      @ingredients = []
       @recipe_card_title = recipe_card_title
       ALL << self
     end
@@ -17,29 +17,24 @@ class Recipe
         ALL
     end
 
-    def self.most_popular
-        most_users = []
-
-      #  binding.pry
-        #
-        # RecipeCard.all.each do |individual_card|
-        #   binding.pry
-
-        # end
-
+    def ingredients
+        @ingredients.flatten
     end
+
+    def add_ingredients(*ingredient)
+      @ingredients << ingredient
+      @ingredients.flatten
+    end
+
+
 
     def users
-    end
-
-    def ingredients
-        @ingredients
     end
 
     def allergens
     end
 
-    def add_ingredients
+    def self.most_popular
     end
 
 end
