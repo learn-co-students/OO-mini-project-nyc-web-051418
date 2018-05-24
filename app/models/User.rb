@@ -29,25 +29,16 @@ class User
 
   def top_three_recipes
 
-
-
-  end
-
-  def sort_rating
     my_array = self.recipe_cards.sort_by{|card| card.rating}
     descending_array = my_array.reverse
     top_3 = descending_array[0,3]
 
 
     top_3.map do |recipe_instance|
-    #  binding.pry
         recipe_instance.recipe
     end
 
-
   end
-
-
 
 
   def declare_allergen
@@ -75,3 +66,16 @@ pie = RecipeCard.new("pie title", "pie recipe", "021415", 1, "Matt")
  matt.add_recipe_card(pasta)
   matt.add_recipe_card(taco)
    matt.add_recipe_card(pie)
+
+pizzarec = Recipe.new("pizzarec","pizza")
+pastarec = Recipe.new("pastarec","pasta")
+tacorec = Recipe.new("tacorec","taco")
+pierec = Recipe.new("pierec","pie")
+
+kayla.add_recipe_card(pizza)
+kayla.add_recipe_card(pasta)
+ kayla.add_recipe_card(taco)
+  kayla.add_recipe_card(pie)
+
+  jeff.add_recipe_card(pizza)
+  jeff.add_recipe_card(pasta)

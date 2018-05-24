@@ -2,14 +2,14 @@ require 'pry'
 
 class Recipe
 
-    attr_accessor :recipe_name, :ingredients, :recipe_card, :recipe_card_title
+    attr_accessor :recipe_name, :ingredients, :recipe_card, :recipe_card_title, :user, :users
 
     ALL = []
 
     def initialize(recipe_name, recipe_card_title)
       @recipe_name = recipe_name
       @ingredients = []
-      @recipe_card_title = recipe_card_title
+      @recipe_card = recipe_card
       ALL << self
     end
 
@@ -29,6 +29,8 @@ class Recipe
 
 
     def users
+      self.recipe_card_title.user
+
     end
 
     def allergens
