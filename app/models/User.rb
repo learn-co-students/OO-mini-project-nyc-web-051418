@@ -56,5 +56,12 @@ class User
   end
 
   recipe_cards[-1]
-  end 
+  end
+
+  def safe_recipes
+    food_allergy = allergens
+    Recipe.all.select do |recipe|
+      recipe.allergens(self).empty?
+    end
+  end
 end
