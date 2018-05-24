@@ -11,7 +11,7 @@ class RecipeCard
     @date = date
     @rating = rating
     @user = user
-    @recipe = recipe
+    @recipe = Recipe.new(recipe_card_title, self)
     ALL << self
   end
 
