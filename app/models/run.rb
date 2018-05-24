@@ -27,11 +27,13 @@ alberto.add_recipe_card(paella, 1, 10)
 alberto.add_recipe_card(pizza, 2, 6)
 alberto.add_recipe_card(wings, 3, 8)
 
-paella_card = max.add_recipe_card(paella, 1, 10)
+max.add_recipe_card(paella, 1, 10)
 max.add_recipe_card(mac_cheese, 1, 10)
 max.add_recipe_card(pasta, 3, 8)
 
 alberto.declare_allergen(fish)
+alberto.declare_allergen(buffalo)
+
 max.declare_allergen(cheese)
 
 alberto.top_three_recipes
@@ -41,10 +43,6 @@ pizza.add_ingredients([cheese, dough])
 paella.add_ingredients([rice, chicken, fish])
 wings.add_ingredients([chicken, buffalo])
 
-
-mac_cheese.allergens
-
-Recipe.most_popular
 binding.pry
 true
 # Pry.start
