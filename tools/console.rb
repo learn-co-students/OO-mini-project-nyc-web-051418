@@ -16,5 +16,7 @@ peanut_allergy = Allergen.new(richard, peanut_butter)
 
 RecipeCard.new(dinner, richard, 3, "1999")
 RecipeCard.new(dinner, john, 2, "1999")
-RecipeCard.new(lunch, john, 2, "1999")
+RecipeCard.new(lunch, john, 1, "1999")
+RecipeCard.new(lunch, john, 4, "1999")
+RecipeCard.new(lunch, john, 5, "1999")
 binding.pry
