@@ -1,3 +1,5 @@
+
+require_relative 'User.rb'
 class RecipeCard
   attr_accessor :recipe, :recipe_user_id, :rating, :date
 
@@ -7,9 +9,10 @@ class RecipeCard
     @recipe_user_id = recipe_user_id
     @rating = rating
     @date = date
+    @@all << self
   end
 
   def self.all
-    self.all
+    @@all
   end
 end

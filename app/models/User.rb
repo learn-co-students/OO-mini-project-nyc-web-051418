@@ -7,10 +7,11 @@ class User
   def initialize(name)
     @name = name
     @id = nil
+    @@all << self
   end
 
-  def self.all?
-    self.all
+  def self.all
+    @@all
   end
 
   def recipes

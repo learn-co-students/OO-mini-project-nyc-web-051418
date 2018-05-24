@@ -6,9 +6,10 @@ class RecipeIngredient
     @ingredient = ingredient
     @recipe = recipe
     @id = nil
+    @@all << self
   end
 
   def self.all
-    self.all
+    @@all
   end
 end
